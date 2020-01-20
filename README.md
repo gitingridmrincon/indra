@@ -1,5 +1,5 @@
 # Prueba Indra Sistema obligaciones
-# Hecha por: Ingrid Milena Rincòn Garzòn  
+# Hecha por: Ingrid Milena Rincón Garzón
 
 Requerimientos tecnológicos para la aplicación
 Definir las capas de aplicación y describir la responsabilidad de su uso
