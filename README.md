@@ -60,6 +60,11 @@ GITHUB
 
 c. Descripción de buenas prácticas de construcción de software usadas.
 
+ Se estructuro la aplicación de manera que pueda ubicar el código rápidamente
+ Se crearon algunas pruebas unitarias Jnunit
+ Se deseaba agregarle pruebas funcionales en cucumber pero queda pendiente por cuestiones de tiempo.
+ Se planea tambien utilizar Lombok para eliminar geter y setters de la aplicacion pero no se alcanzo a aocnfigurar por cuestioes de tiempo. 
+
 d. Paso a paso para despliegue de la solución.
 Dependencias
 
