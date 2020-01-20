@@ -55,8 +55,3 @@ En la carpeta raiz ejecutar el comando: mvn
 localhost:8080
 usuario: user
 password user
-
-
-
-
-
