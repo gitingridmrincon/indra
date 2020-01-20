@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pago">
+            <h2><span jhiTranslate="obligacionesApp.pago.detail.title">Pago</span> {{pago.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="obligacionesApp.pago.codigoPago">Codigo Pago</span></dt>
+                <dd>
+                    <span>{{pago.codigoPago}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.pago.valorPagado">Valor Pagado</span></dt>
+                <dd>
+                    <span>{{pago.valorPagado}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.pago.fechaPago">Fecha Pago</span></dt>
+                <dd>
+                    <span>{{pago.fechaPago}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.pago.periodoPagado">Periodo Pagado</span></dt>
+                <dd>
+                    <span>{{pago.periodoPagado}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.pago.obligacion">Obligacion</span></dt>
+                <dd>
+                    <div *ngIf="pago.obligacion">
+                        <a [routerLink]="['/obligacion', pago.obligacion?.id, 'view']">{{pago.obligacion?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.pago.cliente">Cliente</span></dt>
+                <dd>
+                    <div *ngIf="pago.cliente">
+                        <a [routerLink]="['/cliente', pago.cliente?.id, 'view']">{{pago.cliente?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.pago.banco">Banco</span></dt>
+                <dd>
+                    <div *ngIf="pago.banco">
+                        <a [routerLink]="['/banco', pago.banco?.id, 'view']">{{pago.banco?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pago', pago.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

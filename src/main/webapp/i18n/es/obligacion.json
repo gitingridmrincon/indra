@@ -1,0 +1,32 @@
+{
+  "obligacionesApp": {
+    "obligacion": {
+      "home": {
+        "title": "Obligacions",
+        "createLabel": "Crear nuevo Obligacion",
+        "createOrEditLabel": "Crear o editar Obligacion",
+        "notFound": "Ningún Obligacions encontrado"
+      },
+      "created": "Un nuevo Obligacion ha sido creado con el identificador {{ param }}",
+      "updated": "Un Obligacion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Obligacion ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Obligacion {{ id }}?"
+      },
+      "detail": {
+        "title": "Obligacion"
+      },
+      "codigoObligacion": "Codigo Obligacion",
+      "nombre": "Nombre",
+      "descripcion": "Descripcion",
+      "fecha": "Fecha",
+      "valorTotal": "Valor Total",
+      "valorPeriodo": "Valor Periodo",
+      "nomeroPeriodos": "Nomero Periodos",
+      "periodoActual": "Periodo Actual",
+      "vigente": "Vigente",
+      "estado": "Estado",
+      "producto": "Producto"
+    }
+  }
+}

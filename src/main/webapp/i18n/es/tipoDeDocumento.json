@@ -1,0 +1,11 @@
+{
+  "obligacionesApp": {
+    "TipoDeDocumento": {
+      "null": "",
+      "NIT": "NIT",
+      "CC": "CC",
+      "CE": "CE",
+      "TI": "TI"
+    }
+  }
+}

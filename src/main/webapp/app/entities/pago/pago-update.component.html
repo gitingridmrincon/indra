@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pago-heading" jhiTranslate="obligacionesApp.pago.home.createOrEditLabel">Create or edit a Pago</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.pago.codigoPago" for="field_codigoPago">Codigo Pago</label>
+                    <input required type="text" class="form-control" name="codigoPago" id="field_codigoPago"
+                           formControlName="codigoPago"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.pago.valorPagado" for="field_valorPagado">Valor Pagado</label>
+                    <input required type="number" class="form-control" name="valorPagado" id="field_valorPagado"
+                           formControlName="valorPagado"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.pago.fechaPago" for="field_fechaPago">Fecha Pago</label>
+                    <div class="input-group">
+                        <input required id="field_fechaPago" type="text" class="form-control" name="fechaPago" ngbDatepicker  #fechaPagoDp="ngbDatepicker" formControlName="fechaPago"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaPagoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.pago.periodoPagado" for="field_periodoPagado">Periodo Pagado</label>
+                    <input required type="number" class="form-control" name="periodoPagado" id="field_periodoPagado"
+                           formControlName="periodoPagado"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.pago.obligacion" for="field_obligacion">Obligacion</label>
+                    <select required class="form-control" id="field_obligacion" name="obligacion" formControlName="obligacion">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="obligacionOption.id === editForm.get('obligacion')!.value?.id ? editForm.get('obligacion')!.value : obligacionOption" *ngFor="let obligacionOption of obligacions; trackBy: trackById">{{obligacionOption.id}} - {{obligacionOption.nombre}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.pago.cliente" for="field_cliente">Cliente</label>
+                    <select required class="form-control" id="field_cliente" name="cliente" formControlName="cliente">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clienteOption.id === editForm.get('cliente')!.value?.id ? editForm.get('cliente')!.value : clienteOption" *ngFor="let clienteOption of clientes; trackBy: trackById">{{clienteOption.id}} - {{clienteOption.nombreDelCliente}} {{clienteOption.primerApellido}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.pago.banco" for="field_banco">Banco</label>
+                    <select required class="form-control" id="field_banco" name="banco" formControlName="banco">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="bancoOption.id === editForm.get('banco')!.value?.id ? editForm.get('banco')!.value : bancoOption" *ngFor="let bancoOption of bancos; trackBy: trackById">{{bancoOption.id}} - {{bancoOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

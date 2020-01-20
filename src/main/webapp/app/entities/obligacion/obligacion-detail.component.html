@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="obligacion">
+            <h2><span jhiTranslate="obligacionesApp.obligacion.detail.title">Obligacion</span> {{obligacion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="obligacionesApp.obligacion.codigoObligacion">Codigo Obligacion</span></dt>
+                <dd>
+                    <span>{{obligacion.codigoObligacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{obligacion.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{obligacion.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{obligacion.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.valorTotal">Valor Total</span></dt>
+                <dd>
+                    <span>{{obligacion.valorTotal}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.valorPeriodo">Valor Periodo</span></dt>
+                <dd>
+                    <span>{{obligacion.valorPeriodo}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.nomeroPeriodos">Nomero Periodos</span></dt>
+                <dd>
+                    <span>{{obligacion.nomeroPeriodos}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.periodoActual">Periodo Actual</span></dt>
+                <dd>
+                    <span>{{obligacion.periodoActual}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.vigente">Vigente</span></dt>
+                <dd>
+                    <span>{{obligacion.vigente}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.estado">Estado</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'obligacionesApp.Estado.' + obligacion.estado}}">{{obligacion.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.obligacion.producto">Producto</span></dt>
+                <dd>
+                    <div *ngIf="obligacion.producto">
+                        <a [routerLink]="['/producto', obligacion.producto?.id, 'view']">{{obligacion.producto?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/obligacion', obligacion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

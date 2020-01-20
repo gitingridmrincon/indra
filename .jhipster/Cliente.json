@@ -1,0 +1,53 @@
+{
+    "name": "Cliente",
+    "fields": [
+        {
+            "fieldName": "identificacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoDeDocumento",
+            "fieldType": "TipoDeDocumento",
+            "fieldValues": "NIT,CC,CE,TI"
+        },
+        {
+            "fieldName": "nombreDelCliente",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "segundoNombreDelCliente",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "primerApellido",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "segundoApellido",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rezonSocial",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200119222123",
+    "entityTableName": "cliente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,65 @@
+{
+    "name": "Obligacion",
+    "fields": [
+        {
+            "fieldName": "codigoObligacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fecha",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "valorTotal",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valorPeriodo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nomeroPeriodos",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "periodoActual",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "vigente",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Estado",
+            "fieldValues": "PAGADO,PENDIENTE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "producto",
+            "otherEntityRelationshipName": "obligacion",
+            "relationshipName": "producto",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200119222121",
+    "entityTableName": "obligacion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

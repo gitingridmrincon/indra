@@ -1,0 +1,30 @@
+{
+  "obligacionesApp": {
+    "cliente": {
+      "home": {
+        "title": "Clientes",
+        "createLabel": "Crear nuevo Cliente",
+        "createOrEditLabel": "Crear o editar Cliente",
+        "notFound": "Ningún Clientes encontrado"
+      },
+      "created": "Un nuevo Cliente ha sido creado con el identificador {{ param }}",
+      "updated": "Un Cliente ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Cliente ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Cliente {{ id }}?"
+      },
+      "detail": {
+        "title": "Cliente"
+      },
+      "identificacion": "Identificacion",
+      "tipoDeDocumento": "Tipo De Documento",
+      "nombreDelCliente": "Nombre Del Cliente",
+      "segundoNombreDelCliente": "Segundo Nombre Del Cliente",
+      "primerApellido": "Primer Apellido",
+      "segundoApellido": "Segundo Apellido",
+      "rezonSocial": "Rezon Social",
+      "direccion": "Direccion",
+      "telefono": "Telefono"
+    }
+  }
+}

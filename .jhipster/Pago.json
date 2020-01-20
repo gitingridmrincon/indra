@@ -1,0 +1,54 @@
+{
+    "name": "Pago",
+    "fields": [
+        {
+            "fieldName": "codigoPago",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valorPagado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fechaPago",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "periodoPagado",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "obligacion",
+            "otherEntityRelationshipName": "pago",
+            "relationshipName": "obligacion",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "pago",
+            "relationshipName": "cliente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "banco",
+            "otherEntityRelationshipName": "pago",
+            "relationshipName": "banco",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200119222122",
+    "entityTableName": "pago",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

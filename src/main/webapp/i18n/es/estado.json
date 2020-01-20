@@ -1,0 +1,9 @@
+{
+  "obligacionesApp": {
+    "Estado": {
+      "null": "",
+      "PAGADO": "PAGADO",
+      "PENDIENTE": "PENDIENTE"
+    }
+  }
+}

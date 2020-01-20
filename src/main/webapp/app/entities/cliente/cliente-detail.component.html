@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cliente">
+            <h2><span jhiTranslate="obligacionesApp.cliente.detail.title">Cliente</span> {{cliente.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="obligacionesApp.cliente.identificacion">Identificacion</span></dt>
+                <dd>
+                    <span>{{cliente.identificacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.cliente.tipoDeDocumento">Tipo De Documento</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'obligacionesApp.TipoDeDocumento.' + cliente.tipoDeDocumento}}">{{cliente.tipoDeDocumento}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.cliente.nombreDelCliente">Nombre Del Cliente</span></dt>
+                <dd>
+                    <span>{{cliente.nombreDelCliente}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.cliente.segundoNombreDelCliente">Segundo Nombre Del Cliente</span></dt>
+                <dd>
+                    <span>{{cliente.segundoNombreDelCliente}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.cliente.primerApellido">Primer Apellido</span></dt>
+                <dd>
+                    <span>{{cliente.primerApellido}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.cliente.segundoApellido">Segundo Apellido</span></dt>
+                <dd>
+                    <span>{{cliente.segundoApellido}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.cliente.rezonSocial">Rezon Social</span></dt>
+                <dd>
+                    <span>{{cliente.rezonSocial}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.cliente.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{cliente.direccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="obligacionesApp.cliente.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{cliente.telefono}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cliente', cliente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

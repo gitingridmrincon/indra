@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-obligacion-heading" jhiTranslate="obligacionesApp.obligacion.home.createOrEditLabel">Create or edit a Obligacion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.codigoObligacion" for="field_codigoObligacion">Codigo Obligacion</label>
+                    <input required type="text" class="form-control" name="codigoObligacion" id="field_codigoObligacion"
+                           formControlName="codigoObligacion"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.nombre" for="field_nombre">Nombre</label>
+                    <input required type="text" class="form-control" name="nombre" id="field_nombre"
+                           formControlName="nombre"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                           formControlName="descripcion"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.fecha" for="field_fecha">Fecha</label>
+                    <div class="input-group">
+                        <input id="field_fecha" type="text" class="form-control" name="fecha" ngbDatepicker  #fechaDp="ngbDatepicker" formControlName="fecha"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.valorTotal" for="field_valorTotal">Valor Total</label>
+                    <input required type="number" class="form-control" name="valorTotal" id="field_valorTotal"
+                           formControlName="valorTotal"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.valorPeriodo" for="field_valorPeriodo">Valor Periodo</label>
+                    <input type="number" class="form-control" name="valorPeriodo" id="field_valorPeriodo"
+                           formControlName="valorPeriodo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.nomeroPeriodos" for="field_nomeroPeriodos">Nomero Periodos</label>
+                    <input type="number" class="form-control" name="nomeroPeriodos" id="field_nomeroPeriodos"
+                           formControlName="nomeroPeriodos"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.periodoActual" for="field_periodoActual">Periodo Actual</label>
+                    <input type="number" class="form-control" name="periodoActual" id="field_periodoActual"
+                           formControlName="periodoActual"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.vigente" for="field_vigente">Vigente</label>
+                    <input type="checkbox" class="form-control" name="vigente" id="field_vigente"
+                           formControlName="vigente"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.estado" for="field_estado">Estado</label>
+                    <select required class="form-control" name="estado" formControlName="estado" id="field_estado">
+                        <option value="PAGADO">{{'obligacionesApp.Estado.PAGADO' | translate}}</option>
+                        <option value="PENDIENTE">{{'obligacionesApp.Estado.PENDIENTE' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="obligacionesApp.obligacion.producto" for="field_producto">Producto</label>
+                    <select required class="form-control" id="field_producto" name="producto" formControlName="producto">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productoOption.id === editForm.get('producto')!.value?.id ? editForm.get('producto')!.value : productoOption" *ngFor="let productoOption of productos; trackBy: trackById">{{productoOption.id}} - {{productoOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

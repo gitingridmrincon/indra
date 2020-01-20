@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Pago.
+    -->
+    <changeSet id="20200119222122-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="obligacion_id"
+                                 baseTableName="pago"
+                                 constraintName="fk_pago_obligacion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obligacion"/>
+
+        <addForeignKeyConstraint baseColumnNames="cliente_id"
+                                 baseTableName="pago"
+                                 constraintName="fk_pago_cliente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cliente"/>
+
+        <addForeignKeyConstraint baseColumnNames="banco_id"
+                                 baseTableName="pago"
+                                 constraintName="fk_pago_banco_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="banco"/>
+
+    </changeSet>
+</databaseChangeLog>

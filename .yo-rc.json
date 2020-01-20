@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.indracompany",
+      "nativeLanguage": "es"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "monolith",
+    "baseName": "obligaciones",
+    "packageName": "com.indracompany",
+    "packageFolder": "com/indracompany",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "OWU1MTAzN2I3NjJhMTIwZGEwOGVhYjEyZmM2ZjY0MDM2OWQwMWI5ZmE1ZmY0MmIxMjlhMmU5MDY2YmRhMjdmMDVhNTQ3ZGQxMWYzODU3N2VjZGMzMzVjMmE3MTcxNTFjMjkxOWQzMDRiNDA1MDQ2YmNjNmJmYjQ4YmZhYWRhODA=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1579464147178,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": ["es"],
+    "blueprints": []
+  }
+}
