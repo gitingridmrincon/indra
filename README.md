@@ -9,7 +9,7 @@ base de datos de su selección, debe generar los script para ese motor.
 
 Motor de base de datos embebido se genera y se ejecuta automaticamente el sql
 
-EL modelo esta en el archivo Modelo Entidad Relacion.pgn en la carpeta raiz
+El modelo esta en el archivo Modelo Entidad Relacion.pgn en la carpeta raiz
 
 n. Hacer uso de repositorio gratuito GITHUB
 
